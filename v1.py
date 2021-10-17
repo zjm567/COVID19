@@ -30,3 +30,27 @@ def covid19_risk_age_cal(age):
 #print("the risk is:",risk_value)
 risk_value = covid19_risk_age_cal(10)
 print("the risk is:", risk_value)
+
+def covid19_risk_mask_cal(mask):
+    mask=input("Do you wear mask or not")
+    if mask=='yes':
+        risk_mask=0.175
+    if mask=='no':
+        risk_mask=0.825
+
+    return risk_mask
+
+def covid19_risk_vaccination_cal(vaccination):
+    vaccination=input("Did you take a vaccine")
+    if vaccination=='yes':
+        risk_vaccination=0.15
+    if vaccination=="no":
+        risk_vaccination=0.85
+    
+    return risk_vaccination
+
+def covid19_risk_geolocation_cal(geolocation):
+
+
+    
+
