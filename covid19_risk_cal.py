@@ -33,7 +33,7 @@ def covid19_risk_age_cal(age):
 #risk_value = covid19_risk_cal(2,False,True,91108)
 #print("the risk is:",risk_value)
 risk_value = covid19_risk_age_cal(age)
-print("the risk is:", risk_value)
+print("the risk is: ", risk_value)
 
 
 mask=input("Do you wear mask or not? (y/n): ")
@@ -48,20 +48,22 @@ def covid19_risk_mask_cal(mask):
     return risk_mask
 
 risk_value = covid19_risk_mask_cal(mask)
-print("the risk is:", risk_value)
+print("the risk is: ", risk_value)
 
 vaccination=input("Are you vaccinated or not?(y/n):")
 def covid19_risk_vaccination_cal(vaccination):
 
-    if vaccination=='yes':
+    if vaccination=='y':
         risk_vaccination=0.15
-    if vaccination=="no":
+    elif vaccination=='n':
         risk_vaccination=0.85
+    else:
+        print("can not identify, please try again")
     
     return risk_vaccination
 
 risk_value = covid19_risk_vaccination_cal(vaccination)
-print("the risk is:", risk_value)
+print("the risk is: ", risk_value)
 
 #def covid19_risk_geolocation_cal(geolocation):
  #   geolocation = int(input("Please enter your zip code"))
