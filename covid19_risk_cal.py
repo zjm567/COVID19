@@ -4,9 +4,11 @@ def covid19_risk_cal(age, mask, vaccination, geolocation):
     print("return from covid19_risk_cal")
     return covid_risk
 
+
+age = int(input("Please enter the age:"))
 # calculation of age-related covid-19 risk
 def covid19_risk_age_cal(age):
-    age = int(input("Please enter the age:"))
+    risk_age=0
     if age >= 0 and age <= 17:
         risk_age=0.09
     elif age >=18 and age <= 29:
@@ -21,8 +23,10 @@ def covid19_risk_age_cal(age):
         risk_age=0.076
     elif age >=75 and age <= 84:
         risk_age=0.043
-    else:
+    elif age >=85:
         risk_age=0.029
+    else:
+        print("not acceptable value, please try again")
 
     return risk_age
 
@@ -31,12 +35,15 @@ def covid19_risk_age_cal(age):
 risk_value = covid19_risk_age_cal(10)
 print("the risk is:", risk_value)
 
+
+mask=input("Do you wear mask or not? (y/n): ")
 def covid19_risk_mask_cal(mask):
-    mask=input("Do you wear mask or not")
-    if mask=='yes':
+    if mask=='y':
         risk_mask=0.175
-    if mask=='no':
+    elif mask=='n':
         risk_mask=0.825
+    else:
+        print("can not identify, please try again")
 
     return risk_mask
 
@@ -49,7 +56,15 @@ def covid19_risk_vaccination_cal(vaccination):
     
     return risk_vaccination
 
+def covid19_risk_geolocation_cal(geolocation):
+    geolocation = int(input("Please enter your zip code"))
+ #   if geolocation == "#####":
+ #   risk_geolocation=0.##
+    
+ #   return risk_geolocation
+
 w0, w1, w2, w3 = (0.1,0.20,0.30,0.20)
 def risk_cal(age, mask, vaccination, geolocation):
     risk = w0*age+w1+mask+w2+vaccination+w3*geolocation
     return risk
+
