@@ -1,4 +1,4 @@
-ratio = int(input("Please enter your test case ratio:"))
+ratio = float(input("Please enter your test case percentage:"))
 def test_case_ratio(ratio):
     if ratio >= 0 and ratio <= 10:
         risk_ratio=0.015
@@ -10,7 +10,8 @@ def test_case_ratio(ratio):
         risk_ratio=0.15
     elif ratio >=51 and ratio <= 100:
         risk_ratio=0.7
-    
+    else:
+        print("invalid input value, please try again")
     return risk_ratio
 
 risk_value = test_case_ratio(ratio)

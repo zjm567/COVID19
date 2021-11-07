@@ -1,4 +1,4 @@
-age = int(input("Please enter the age:"))
+#age = int(input("Please enter the age:"))
 # calculation of age-related covid-19 risk
 def covid19_risk_age_cal(age):
     risk_age=0
@@ -23,10 +23,10 @@ def covid19_risk_age_cal(age):
 
     return risk_age
 
-risk_value = covid19_risk_age_cal(age)
-print("the risk is: ", risk_value)
+#risk_value = covid19_risk_age_cal(age)
+#print("the risk is: ", risk_value)
 
-mask=input("Do you wear mask or not? (y/n): ")
+#mask=input("Do you wear mask or not? (y/n): ")
 def covid19_risk_mask_cal(mask):
     if mask=='y':
         risk_mask=0.175
@@ -37,10 +37,10 @@ def covid19_risk_mask_cal(mask):
 
     return risk_mask
 
-risk_value = covid19_risk_mask_cal(mask)
-print("the risk is: ", risk_value)
+#risk_value = covid19_risk_mask_cal(mask)
+#print("the risk is: ", risk_value)
 
-vaccination=input("Are you vaccinated or not?(y/n):")
+#vaccination=input("Are you vaccinated or not?(y/n):")
 def covid19_risk_vaccination_cal(vaccination):
 
     if vaccination=='y':
@@ -52,25 +52,30 @@ def covid19_risk_vaccination_cal(vaccination):
     
     return risk_vaccination
 
-risk_value = covid19_risk_vaccination_cal(vaccination)
-print("the risk is: ", risk_value)
+#risk_value = covid19_risk_vaccination_cal(vaccination)
+#print("the risk is: ", risk_value)
 
 #def covid19_risk_geolocation_cal(geolocation):
- #   zipcode = int(input("Please enter your zip code"))
- #   if zipcode == "#####":
- #      geolocation == "##"
- # Note: geolocation is equal to percentage
-    if geolocation >= 0 and geolocation <= 10:
-        risk_geolcation=0.015
-    elif geolocation >=11 and geolocation <= 20:
-        risk_geolocation=0.035
-    elif geolocation >=21 and geolocation <= 35:
-        risk_geolocation=0.1
-    elif geolocation >=36 and geolocation <= 50:
-        risk_geolocation=0.15
-    elif geolocation >=51 and geolocation <= 100:
-        risk_geolocation=0.7
- #   return risk_geolocation
+# Note: geolocation is equal to percentage
+#ratio = float(input("Please enter your test case percentage:"))
+
+def test_case_ratio(ratio):
+    if ratio >= 0 and ratio <= 10:
+        risk_ratio=0.015
+    elif ratio >=11 and ratio <= 20:
+        risk_ratio=0.035
+    elif ratio >=21 and ratio <= 35:
+        risk_ratio=0.1
+    elif ratio >=36 and ratio <= 50:
+        risk_ratio=0.15
+    elif ratio >=51 and ratio <= 100:
+        risk_ratio=0.7
+    else:
+        print("invalid input value, please try again")
+    return risk_ratio
+
+#risk_value = test_case_ratio(ratio)
+#print("the risk is: ", risk_value)
 
 w0, w1, w2, w3 = (0.1,0.20,0.30,0.20)
 def risk_cal(age, mask, vaccination, geolocation):
