@@ -1,16 +1,13 @@
-from covid19_risk_cal import risk_cal as risk_overall
+from covid19_risk_cal import risk_cal 
 
 def main():
-    age =int(input("Please enter your age: "))
+    age = int(input("Please enter your age: "))
+    mask = input("Do you wear mask or not? (y/n): ")
+    vaccination = input("Are you vaccinated or not?(y/n): ")
+    geolocation = input("Please enter your state name: ")
 
-    ratio = float(input("Please enter your test case percentage:"))
-
-    vaccination=input("Are you vaccinated or not?(y/n):")
-
-    mask=input("Do you wear mask or not? (y/n): ")
-
-    risk_value=risk_overall(age, mask, vaccination, ratio)
-    print("The overall risk is : ", risk_value)
+    risk_value = risk_cal(age, mask, vaccination, geolocation)
+    print("The overall risk is : ", risk_value,"%")
 
 if __name__ == '__main__':
     main()
