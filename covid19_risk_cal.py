@@ -28,9 +28,9 @@ def covid19_risk_age_cal(age):
     return risk_age
 
 def covid19_risk_mask_cal(mask):
-    if mask == 'y':
+    if mask == 'Yes':
         risk_mask = 0.175
-    elif mask == 'n':
+    elif mask == 'No':
         risk_mask = 0.825
     else:
         print("can not identify, please try again")
@@ -39,9 +39,9 @@ def covid19_risk_mask_cal(mask):
 
 def covid19_risk_vaccination_cal(vaccination):
 
-    if vaccination == 'y':
+    if vaccination == 'Yes':
         risk_vaccination = 0.15
-    elif vaccination == 'n':
+    elif vaccination == 'No':
         risk_vaccination = 0.85
     else:
         print("can not identify, please try again")
