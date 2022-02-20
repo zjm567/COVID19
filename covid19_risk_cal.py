@@ -28,23 +28,24 @@ def covid19_risk_age_cal(age):
     return risk_age
 
 def covid19_risk_mask_cal(mask):
+    risk_mask = 0
     if mask == 'Yes':
         risk_mask = 0.175
     elif mask == 'No':
         risk_mask = 0.825
     else:
-        print("can not identify, please try again")
+        print("Please enter 'Yes' or 'No' ")
 
     return risk_mask
 
 def covid19_risk_vaccination_cal(vaccination):
-
+    risk_vaccination = 0
     if vaccination == 'Yes':
         risk_vaccination = 0.15
     elif vaccination == 'No':
         risk_vaccination = 0.85
     else:
-        print("can not identify, please try again")
+        print("Please enter 'Yes' or 'No' ")
     
     return risk_vaccination
 
@@ -56,6 +57,7 @@ def state_data(state_name):
             return ratio                            
 
 def covid19_risk_ratio_cal(ratio):
+    risk_level = 0
     if ratio >= 0 and ratio <= 10:
         risk_level = 0.015
     elif ratio >= 11 and ratio <= 20:
